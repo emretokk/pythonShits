@@ -68,4 +68,4 @@ async def botvs(ctx):
 	await ctx.send("")
 
 
-client.run("Nzg1NTUyOTMyMDUyNTMzMjU5.X85hLQ.D9lxVmwvp4SjeHXtJ_XScAWSdFM")
+client.run("my bot token :)")
