@@ -1,0 +1,125 @@
+Print() Fonksiyonunun parametreleri
+
+   sep
+        (separator):ayırıcı,ayraç
+
+            sep parametresi aradaki boşluklara değer atayabilir
+            SADECE String ve none değerlerini verebiliriz.
+            değiştirilmediği takdirde örneğin;
+
+                print("X","Y","Z")
+                X Y Z
+
+            şeklinde sonuç verir ön tanımlı değeri sep=" "dir
+            sep parametresini şu şekilde kullanabilirsin :
+
+                print("X","Y","Z",sep="**")
+                X**Y**Z
+
+
+   end
+
+            sep parametresi gibi değiştirilmese bile vardır.
+            SADECE String ve none değerlerini verebiliriz.
+            sep araya hangi karakter geleceğini belirtiyordu
+            end ise sona ne geleceğini belirtir
+            değiştirilmediği takdirde örneğin;
+
+                 print("Bugün Salı")
+                 Bugün Salı
+
+                 Process finished with exit code 0
+
+            Şeklinde sonuç verir ön tanımlı değeri end="\n"dir.
+            end parametresini şu şekilde kullanabiliriz :
+
+                 print("Bugün günlerden Salı", end=".")
+                 Bugün günlerden Salı.
+                 Process finished with exit code 0
+
+            Gördüğün gibi sondaki \n yerine . koyuldu böylece çıktı değişti
+
+   file
+
+            Görevi, print() fonksiyonuna verilen parametrelerin nereye yazılacağını belirtmektir.
+            Bu parametrenin öntanımlı değeri sys.stdout’tur.
+            Standart Çıktı Konumu anlamına gelir
+            Yani çıktıların ekrana değil bir dosyaya verilmesini sağlar.
+
+                 dosya = open("deneme.txt", "w")
+                 print("Ben Python, Monty Python!", file=dosya)
+                 dosya.close()
+
+            ekrana çıktı vermez deneme.txtnin içine yazar
+
+   flush
+
+            Bu parametre dosyayı kapatmadan direkt olarak dosyaya yazmayı sağlar
+            İki değer alır True ve False
+            Ön tanımlı değeri False tur.
+            örek verecek olursak:
+
+                 f = open("kişisel_bilgiler.txt", "w")
+                 print("Merhaba Dünya!", file=f, flush=True)
+
+            Yani eğer biz bu parametreye herhangi bir değer belirtmezsek
+            Python bu parametrenin değerini False olarak kabul edecek
+            ve bilgilerin dosyaya yazılması için dosyanın kapatılmasını bekleyecektir.
+
+   Yıldızlı Parametreler
+
+
+
+            print(*"Emre")
+            E m r e
+
+            karakter dizisinin her bir öğesini parçalarına ayırarak,
+            bunları tek tek print() fonksiyonuna yolluyor.
+            Yani sanki print() fonksiyonunu şöyle yazmışız gibi oluyor:
+
+            print("E","m","r","e")
+            E m r e
+
+   sys.stdout  u kalıcı olarak değiştirme
+
+            f = open("dosya.txt", "w")
+            print("Fırat Özgül", file=f)
+            print("Adana", file=f)
+            print("Ubuntu", file=f)
+            f.close()
+
+            gördüğümüz gibi her defasında file=f yapmak biraz uzun
+            bunu şu şekilde düzeltebiliriz:
+
+            import sys
+            f = open("dosya.txt", "w")
+            sys.stdout=f
+
+            Bildiğiniz gibi, sys.stdout değeri Python’ın çıktıları hangi konuma vereceğini belirliyor.
+            İşte biz burada sys.stdout’un değerini biraz önce oluşturduğumuz f adlı dosya ile değiştiriyoruz.
+            Böylece Python bütün çıktıları f değişkeni içinde belirttiğimiz dosya.txt adlı dosyaya gönderiyor.
+
+            print("deneme metni", flush=True)
+
+            Gördüğünüz gibi, burada file parametresini kullanmadığımız halde çıktılarımız ekrana değil,
+            dosya.txt adlı bir dosyaya yazdırıldı. Peki ama bu nasıl oldu? Aslında bunun cevabı çok basit:
+            Biraz önce sys.stdout = f komutuyla sys.stdout’un değerini f değişkeninin tuttuğu dosya ile değiştirdik.
+
+            Peki bunu geri nasıl alacağız
+
+            osman = "Araştırma Geliştirme Müdürü"
+            mehmet = "Proje Sorumlusu"
+            osman, mehmet = mehmet, osman
+
+            osmanı proje sorumlusu mehmeti araştırma geliştirme müdürü yaptık böylece
+            buna benzer olarak
+
+            import sys
+            f = open("dosya.txt", "w")
+            sys.stdout, f = f, sys.stdout
+            print("deneme", flush=True)
+            f, sys.stdout = sys.stdout, f
+            print("deneme")
+            deneme
+
+

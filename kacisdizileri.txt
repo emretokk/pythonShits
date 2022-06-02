@@ -1,0 +1,152 @@
+\:
+        Sonraki karakteri görmezden gelir
+
+        print("C:\nisan\masraflar\toplam_masraf.txt")
+        C:
+        isan\masraflar      oplam_masraf.txt
+
+        Bunu Düzeltmek İçin Kullanılır
+
+        print("C:\\nisan\\masraflar\\toplam_masraf.txt")
+        C:\\nisan\\masraflar\\toplam_masraf.txt
+
+\n:
+        Sonraki Satıra Atlar
+        String İçinde Kullanılır
+
+        print("birinci satır\nikinci satır\nüçüncü satır")
+        birinci satır
+        ikinci satır
+        üçüncü satır
+
+\t:
+        Taba Basılmış Gibi Boşluk Bırakır
+
+        print(*"123456789", sep="\t")
+        1   2   3   4   5   6   7   8   9
+
+\a
+        Bip Sesi Çıkarır
+
+\r
+        Aynı Satırın Başına Dönüp Üzerine Yazar.
+
+        print("Merhaba\rDünya")
+        Dünyaba
+
+\v
+        print("düşey\vsekme")
+
+        düşey
+              sekme
+
+\b
+        İmleci 1 Karakter Sola Kaydırır
+        print("Hadi\bBakim")
+        HadBakim
+
+\u
+        Python UNICODE sistemindeki her bir kod konumunu gösterebilmek için,
+        önce \u şeklinde bir kaçış dizisi tanımlıyor,
+        ardından UNICODE sisteminde + işaretinden sonra gelen sayıyı
+        bu kaçış dizisinin hemen sağına ekliyor.
+
+        Örneğin ‘ı’ harfi UNICODE sisteminde şu şekilde temsil edilir:
+        u+0131
+        Python programlama dilinde ise, yukarıdaki kod konumu düzeni şöyle gösterilir:
+        \\u0131
+
+\U
+        Eğer aynı kod konumunu U adlı kaçış dizisi ile göstermek istersek şöyle bir şey yazmamız gerekir:
+        \U00000131
+
+\x
+        \x kaçış dizisini kullanarak, onaltılı (hexadecimal) sayma sistemindeki
+        bir sayının karakter karşılığını gösterebilirsiniz.
+
+        print("\x41")
+        'A'
+
+         Eğer hangi karakterlerin hangi sayılara karşılık geldiğini merak ediyorsanız
+         http://www.ascii.cl/ adresindeki tabloyu inceleyebilirsiniz.
+         Bu tabloda ‘hex’ sütunu altında gösterilen sayılar onaltılı sayılar olup,
+         ‘symbol’ sütununda gösterilen karakterlere karşılık gelirler.
+         Örneğin ‘hex’ sütunundaki 4E sayısı ‘symbol’ sütunundaki ‘N’ harfine karşılık gelir.
+
+r
+         Kaçış Dizilerinden Kaçmayı Sağlar :)
+
+         print("Kurulum dizini: C:\aylar\nisan\toplam masraf")
+         Kurulum dizini: C:ylar
+         isan        oplam masraf
+
+         print(r"Kurulum dizini: C:\aylar\nisan\toplam masraf")
+         Kurulum dizini: C:\aylar\nisan\toplam masraf
+
+
+
+                          GENEL BAKIŞ
+
+Kaçış Dizisi
+
+Anlamı
+
+'
+
+Karakter dizisi içinde tek tırnak işaretini kullanabilmemizi sağlar.
+
+"
+
+Karakter dizisi içinde çift tırnak işaretini kullanabilmemizi sağlar.
+
+\
+
+Karakter dizisi içinde \ işaretini kullanabilmemizi sağlar.
+
+\n
+
+Yeni bir satıra geçmemizi sağlar.
+
+\t
+
+Karakterler arasında sekme boşluğu bırakmamızı sağlar.
+
+\u
+
+UNICODE kod konumlarını gösterebilmemizi sağlar.
+
+\U
+
+UNICODE kod konumlarını gösterebilmemizi sağlar.
+
+\N
+
+Karakterleri UNICODE adlarına göre kullanabilmemizi sağlar.
+
+\x
+
+Onaltılı sistemdeki bir sayının karakter karşılığını gösterebilmemizi sağlar.
+
+\a
+
+Destekleyen sistemlerde, kasa hoparlöründen bir ‘bip’ sesi verilmesini sağlar.
+
+\r
+
+Aynı satırın başına dönülmesini sağlar.
+
+\v
+
+Destekleyen sistemlerde düşey sekme oluşturulmasını sağlar.
+
+\b
+
+İmlecin sola doğru kaydırılmasını sağlar
+
+\f
+
+Yeni bir sayfaya geçilmesini sağlar.
+
+r
+
+Karakter dizisi içinde kaçış dizilerini kullanabilmemizi sağlar.
